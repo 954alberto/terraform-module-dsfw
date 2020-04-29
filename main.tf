@@ -10,10 +10,10 @@ data "helm_repository" "repository" {
 }
 
 resource "helm_release" "release" {
-  namespace  = var.namespace
-  name       = var.name
-  chart      = var.chart
-  version    = var.chart_version
-  values     = [var.helm_values]
-  timeout    = var.helm_timeout
+  namespace = var.namespace
+  name      = var.name
+  chart     = var.chart
+  version   = var.chart_version
+  values    = [var.helm_values]
+  timeout   = var.helm_timeout
 }
