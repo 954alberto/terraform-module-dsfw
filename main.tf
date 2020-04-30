@@ -5,8 +5,8 @@ resource "kubernetes_namespace" "namespace" {
 }
 
 data "helm_repository" "sbp" {
-  name = var.helm_repository
-  url  = var.helm_repository_url
+  name = var.dsfw_helm_repository
+  url  = var.dsfw_helm_repository_url
 }
 
 resource "helm_release" "dsfw" {
@@ -19,8 +19,8 @@ resource "helm_release" "dsfw" {
 }
 
 data "helm_repository" "presslabs" {
-  name = "presslabs"
-  url  = "https://presslabs.github.io/charts"
+  name = var.mysql_cluster_helm_repository
+  url  = var.mysql_cluster_helm_repository_url
 }
 
 resource "helm_release" "mysql-cluster" {
